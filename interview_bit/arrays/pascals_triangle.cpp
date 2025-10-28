@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
-public:
+public: 
     vector<vector<int>> pascalsTriangle(int numRows);
 };
 
