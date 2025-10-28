@@ -11,12 +11,12 @@ public class slidiing_window_in_java {
         for (int i = 0; i < window_size; i++){
             max_sum += numbers[i];
         }
-        int current_sum = 0;
-        for(int i = 1 ; i<numbers.length-window_size;i++){
+        int current_sum = max_sum;
+        for(int i = 1 ; i<numbers.length-window_size+1;i++){
             
-            current_sum = max_sum - numbers[i-1] + numbers[i+window_size-1];
+            current_sum = current_sum - numbers[i-1] + numbers[i+window_size-1];
             System.out.println("-------------------");
-            System.out.println(max_sum+" - " + numbers[i-1] + " + " + numbers[i+window_size-1]);
+            System.out.println(current_sum+" - " + numbers[i-1] + " + " + numbers[i+window_size-1]);
             System.out.println("max_sum: " + max_sum);
             System.out.println("Current Sum: " + current_sum);
             System.out.println("-------------------");
