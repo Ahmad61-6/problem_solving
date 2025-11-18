@@ -2,11 +2,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/* 
+
+public class leetcode_valid_anagram{
+    /* 
  * The time complexity of this solution is O(n log n) due to the sorting step, where n is the length of the strings.
  * The space complexity is O(1) if we ignore the space used for sorting, otherwise
  */
-public class leetcode_valid_anagram{
 
     public static boolean isAnagram(String s, String t){
         if(s.length() != t.length()) return false;
@@ -19,6 +20,11 @@ public class leetcode_valid_anagram{
         return false;
     }
 
+
+    /*
+     * The time complexity of this solution is O(n), where n is the length of the strings.
+     * The space complexity is O(1) since the size of the hashmap will not exceed
+     */
     public static boolean isAnagram2(String s, String t){
          if(s.length() != t.length()) return false;
         Map<Character, Integer> s_map = new HashMap<>();
