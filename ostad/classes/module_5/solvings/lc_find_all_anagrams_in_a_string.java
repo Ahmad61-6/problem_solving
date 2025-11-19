@@ -25,50 +25,32 @@ public class lc_find_all_anagrams_in_a_string {
     }
     return result;
     }
+    /*
+     * This is the optimized solution to find all anagrams of a string p in string s.
+     * The time complexity of this solution is O(n), where n is the length of string s.
+     */
     public static List<Integer> findAnagramsOpt(String s, String p) {
         List<Integer> result = new ArrayList<>();
         int n = s.length();
         int k = p.length();
-
-        // Edge case: If the pattern is longer than the search string, no anagram is possible.
         if (k > n) {
             return result;
         }
-
-        // 1. Initialize Frequency Arrays
-        // Use an array of size 26 (for 'a' through 'z') to store character counts.
         int[] pCount = new int[26];
         int[] sCount = new int[26];
-
-        // 2. Initialize the first window (length k)
         for (int i = 0; i < k; i++) {
-            // Count characters for pattern p
             pCount[p.charAt(i) - 'a']++;
-            // Count characters for the initial sliding window in s
             sCount[s.charAt(i) - 'a']++;
         }
-
-        // Check if the initial window is an anagram
         if (Arrays.equals(pCount, sCount)) {
-            result.add(0); // Index 0 is the start of the first window
+            result.add(0); 
         }
-
-        // 3. Slide the Window (from index k up to n)
-        // 'right' is the index of the character entering the window.
         for (int right = k; right < n; right++) {
-            
-            // Character ENTERING the window (s[right])
             sCount[s.charAt(right) - 'a']++;
-
-            // Character LEAVING the window (s[right - k])
-            // 'left' is the index of the character leaving the window.
             int left = right - k;
             sCount[s.charAt(left) - 'a']--;
-
-            // 4. Check for Anagram
-            // If the two frequency arrays match, we found an anagram.
             if (Arrays.equals(pCount, sCount)) {
-                result.add(left + 1); // Add the new starting index (left + 1)
+                result.add(left + 1);
             }
         }
 
