@@ -25,10 +25,6 @@ public class lc_find_all_anagrams_in_a_string {
     }
     return result;
     }
-    /*
-     * This is the optimized solution to find all anagrams of a string p in string s.
-     * The time complexity of this solution is O(n), where n is the length of string s.
-     */
     public static List<Integer> findAnagramsOpt(String s, String p) {
         List<Integer> result = new ArrayList<>();
         int n = s.length();
@@ -38,6 +34,7 @@ public class lc_find_all_anagrams_in_a_string {
         }
         int[] pCount = new int[26];
         int[] sCount = new int[26];
+
         for (int i = 0; i < k; i++) {
             pCount[p.charAt(i) - 'a']++;
             sCount[s.charAt(i) - 'a']++;
@@ -50,7 +47,7 @@ public class lc_find_all_anagrams_in_a_string {
             int left = right - k;
             sCount[s.charAt(left) - 'a']--;
             if (Arrays.equals(pCount, sCount)) {
-                result.add(left + 1);
+                result.add(left + 1); 
             }
         }
 
