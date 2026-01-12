@@ -15,7 +15,6 @@ public class task_2 {
          }
          System.out.println(encryptMap);
          String reverse = new StringBuilder(str).reverse().toString();
-         String dec = "";
          System.out.println("a"+1);
 
         //  for(int i = 0;i<str.length();i++){

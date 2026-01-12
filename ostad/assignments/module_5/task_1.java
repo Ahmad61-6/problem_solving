@@ -23,7 +23,7 @@ public class task_1 {
                 totalDeficit+= Math.abs(diff);
             }
         }
-        System.out.println(totalExcess + " "+ totalDeficit);
+        // System.out.println(totalExcess + " "+ totalDeficit);
         int max =Math.max(totalExcess, totalDeficit);
 
         if(max<=k){
