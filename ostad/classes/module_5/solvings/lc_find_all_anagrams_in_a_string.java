@@ -1,3 +1,5 @@
+package ostad.classes.module_5.solvings;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
